@@ -3,8 +3,10 @@
 - I’m currently a Computer science at KNUST; Kumasi, Ghana.
 - I’m looking to collaborate on development projects and ideas to better cooperation😁
 - You can contact me via 📲
-  Tel. no: 0536997751 or
-  X : https://x.com/SYiadom38625?t=wqhhYOVMle2uEmN9UxD93w&s=09
+  Tel. no: 0536997751
+  
+  X : https://x.com/SYiadom38625? t=wqhhYOVMle2uEmN9UxD93w&s=09
+  
   Email: syiadom962@gmail.com 
 - ⚡ Fun fact: Live life and have fun
 <!---
