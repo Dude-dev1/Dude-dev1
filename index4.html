@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				color: #fff;
+			}
+			.container {
+				height: 85vh;
+				background-color: #202124;
+			}
+			.container header {
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				padding: 0 30px;
+			}
+			.container header nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 30px;
+			}
+
+			.container main {
+				height: 80%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			main h1 {
+				font-size: 84px;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+			main .input_container {
+				width: 600px;
+				height: 50px;
+				border: 1px solid white;
+				border-radius: 25px;
+				margin-bottom: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 20px;
+			}
+			main .input_container button {
+				width: 30px;
+				height: 30px;
+				background-color: red;
+				border: none;
+			}
+			.input_container input {
+				width: 80%;
+				height: 100%;
+				background-color: transparent;
+				border: none;
+			}
+			.input_container input:focus {
+				outline: 0;
+			}
+			main .buttons_container {
+				display: flex;
+				gap: 12px;
+				margin-top: 10px;
+			}
+			.buttons_container button {
+				padding: 12px 20px;
+				border-radius: 5px;
+				background-color: #303134;
+				border: none;
+			}
+			.buttons_container button:hover {
+				border: 1px solid #fff;
+			}
+
+			main .offers {
+				display: flex;
+				gap: 5px;
+				margin-top: 30px;
+			}
+			.offers nav a {
+				color: #99c3ff;
+			}
+
+			.footer {
+				height: 15vh;
+				background-color: #171717;
+			}
+
+			.footer_parents {
+				height: 50%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 30px;
+			}
+			.first_footer_parent {
+				border-bottom: 1px solid white;
+			}
+			.second_footer_parent nav {
+				display: flex;
+				align-items: center;
+				width: auto;
+				gap: 30px;
+			}
+			/* Pseudo-elements */
+
+			.second_footer_parent nav:first-child {
+                width: 40%;
+            }
+
+            .second_footer_parent nav:last-child {
+                gap: 30px;
+            } 
+            .second_footer_parent nav:nth-child(1) {
+                background-color: #171717;
+            } 
+
+			/* Pseudo-classes */
+			nav a {
+				text-decoration: none;
+				border: 1px;
+				width: auto;
+				color: white;
+				display: inline-block;
+			}
+			nav a:hover {
+				text-decoration: underline;
+			}
+
+			.menu, .profile, .filter {
+				width: 30px;
+				height: 30px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="container">
+				<header>
+					<nav>
+						<a href="mailto: syiadom962@gmail.com">Gmail</a>
+						<a href="">Images</a>
+						<a href="" class="filter"></a>
+						<a href="" class="menu"></a>
+						<a href="" class="profile"></a>
+					</nav>
+				</header>
+				<main>
+					<h1>Google</h1>
+					<div class="input_container">
+						<button></button>
+						<input type="text" placeholder="Search" />
+						<button></button>
+						<button></button>
+					</div>
+					<div class="buttons_container">
+						<button>Google Search</button>
+						<button>I'm Feeling Lucky</button>
+					</div>
+					<div class="offers">
+						<p>Google Offered In:</p>
+						<nav>
+							<a href="">Hausa</a>
+							<a href="">Akan</a>
+							<a href="">Ewe</a>
+							<a href="">Ga</a>
+						</nav>
+					</div>
+				</main>
+			</div>
+			<div class="footer">
+				<div class="footer_parents first_footer_parent">
+					<p>Ghana</p>
+				</div>
+				<div class="footer_parents second_footer_parent">
+					<nav>
+						<a href="">About</a>
+						<a href="">Advertising</a>
+						<a href="">Business</a>
+						<a href="">How Search Works</a>
+					</nav>
+					<nav>
+						<a href="">Privacy</a>
+						<a href="">Terms</a>
+						<a href="">Settings</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
