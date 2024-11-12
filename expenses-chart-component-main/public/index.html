@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="balance-section">
+        <div>
+          <p>My balance</p>
+          <p class="inline-element">$921.48</p>
+        </div>
+        <div class="post">
+          <div class="round1"></div>
+          <div class="round"></div>
+        </div>
+      </div>
+      <div class="spending-section">
+        <div class="canvas">
+          <div class="heading">
+            <h2>Spending - Last 7 Days</h2>
+          </div>
+          <canvas id="myChart" width="100" height="100"></canvas>
+        </div>
+        <div class="bottom">
+          <div class="right">
+            <p class="info">Total this month</p>
+            <p class="num1">$478.33</p>
+          </div>
+          <div class="left">
+            <p class="num2">+2.4%</p>
+            <p class="info">from last month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+      const display = document.querySelector(".inline-element");
+      const xs = [];
+      const ys = [];
+
+      chartGet();
+
+      async function chartGet() {
+        await getData();
+        const ctx = document.getElementById("myChart").getContext("2d");
+
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: xs,
+            datasets: [
+              {
+                label: "Spending - Last 7 Days",
+                data: ys,
+                fill: true,
+                backgroundColor: [
+                  "hsl(10, 79%, 65%)",
+                  "hsl(10, 79%, 65%)",
+                  "hsl(186, 34%, 60%)",
+                  "hsl(10, 79%, 65%)",
+                  "hsl(10, 79%, 65%)",
+                  "hsl(10, 79%, 65%)",
+                  "hsl(10, 79%, 65%)",
+                ],
+                hoverBackgroundColor: [
+                  "hsl(10, 79%, 80%)",
+                  "hsl(10, 79%, 80%)",
+                  "hsl(186, 34%, 80%)",
+                  "hsl(10, 79%, 80%)",
+                  "hsl(10, 79%, 80%)",
+                  "hsl(10, 79%, 80%)",
+                  "hsl(10, 79%, 80%)",
+                ],
+                borderWidth: 1,
+                borderRadius: 5, // Rounded corners for the bars
+                barThickness: "flex",
+                barPercentage: 0.9, // Adjust the width of the bars
+                categoryPercentage: 0.9, // Control the space between bars
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                offset: true, // Align the labels with the bars
+                ticks: {
+                  display: true,
+                  font: {
+                    size: 14, // Adjust the font size of the labels
+                  },
+                  color: "grey", // Change the label color to black
+                },
+                grid: {
+                  display: false, // Remove default grid line
+                  drawBorder: false, // Hide the default x-axis border
+                },
+                border: {
+                  display: false, // Add a line under the x-axis labels
+                },
+              },
+              y: {
+                display: false, // Hide the y-axis
+                min: 0, // Set minimum value for y-axis
+                grid: {
+                  display: false, // Remove grid lines for y-axis
+                },
+                suggestedMax: 80, // Decrease this to limit bar height
+              },
+            },
+            layout: {
+              padding: {
+                bottom: 20, // Add padding to the bottom to ensure the bars are fully visible
+              },
+            },
+            plugins: {
+              legend: {
+                display: false, // Hide the legend
+              },
+              tooltip: {
+                enabled: true,
+                displayColors: false,
+
+                callbacks: {
+                  title: function () {
+                    return null;
+                  },
+                  label: function (tooltipItem) {
+                    return `$${tooltipItem.raw}`;
+                  },
+                },
+                backgroundColor: "hsl(25, 47%, 15%)",
+                cornerRadius: 5,
+                yAlign: "bottom",
+                padding: 10,
+                caretPadding: 10,
+                caretSize: 0,
+                font: {
+                  size: 30,
+                },
+              },
+            },
+          },
+        });
+      }
+
+      async function getData() {
+        let sum = 0;
+
+        const response = await fetch("data.json");
+        const data = await response.json();
+
+        data.forEach(({ day, amount }) => {
+          xs.push(day);
+          ys.push(amount);
+          //   sum += amount;
+        });
+        // console.log(sum);
+      }
+    </script>
+  </body>
+</html>

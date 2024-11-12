@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        filter: blur();
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        z-index: 10;
+      }
+      .item {
+        background-color: aqua;
+        height: 28rem;
+        width: 28rem;
+      }
+      .close-btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 28.5rem;
+        background-color: transparent;
+        border: none;
+        margin-bottom: 1rem;
+      }
+      .control {
+        width: 31rem;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-515%);
+      }
+      button {
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: none;
+        /* background-color: hsl(0, 0%, 100%); */
+        background-color: blue;
+      }
+      .cart-item {
+        width: 21rem;
+        height: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.3rem;
+        padding: 20px;
+      }
+      .upper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 3.8rem;
+      }
+      .bottom {
+        width: 100%;
+        height: 4rem;
+        background-color: orange;
+        border-radius: 10px;
+      }
+      .start {
+        height: 100%;
+        width: 3.8rem;
+      }
+      .start img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+      .middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 70%;
+        gap: 0;
+      }
+      .priced {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        height: 50%;
+        width: 100%;
+      }
+      .used {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        height: 50%;
+        width: 100%;
+      }
+      .bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: hsl(220, 13%, 13%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-item">
+      <div class="upper">
+        <div class="start">
+          <img src="./images/image-product-1.jpg" alt="image-product-1" />
+        </div>
+        <div class="middle">
+          <div class="used">
+            <p>Fall Limited Edition Sneakers</p>
+          </div>
+          <div class="priced">
+            <p class="tag">$125</p>
+            <p>x <span class="amount">3</span></p>
+            <p class="total">$375</p>
+          </div>
+        </div>
+        <div class="end">
+          <img src="./images/icon-delete.svg" alt="icon-delete" />
+        </div>
+      </div>
+      <div class="bottom">Checkout</div>
+    </div>
+  </body>
+</html>

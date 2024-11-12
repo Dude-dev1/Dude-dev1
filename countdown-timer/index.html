@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown-timer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 200px;
+      }
+
+      .countdown {
+        font-size: 4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="countdown"></div>
+
+    <script>
+      //get the element which the countdown will be displayed
+      const count = document.querySelector(".countdown");
+
+      //get the target date
+      const targetDate = new Date("Oct 23, 2024 00:00:00").getTime();
+
+      const countdown = setInterval(() => {
+        //get the date of the current day
+        const currentDate = new Date().getTime();
+
+        //calculate the time difference
+        const timeDifference = targetDate - currentDate;
+
+        // calculate  the days, hours, minutes, seconds
+
+        const day = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        const hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        //set the to the text content of the count
+        count.textContent = `${day}d : ${hours}h : ${minutes}m : ${seconds}s`;
+
+        // dislay text when countdown is over
+        if (timeDifference <= 0) {
+          clearInterval(countdown);
+          count.textContent =
+            0 + "d" + ":" + 0 + "h" + ":" + 0 + "m" + ":" + 0 + "s";
+        }
+      });
+    </script>
+  </body>
+</html>

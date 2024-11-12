@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 120px 60px;
+  background-color: hsl(20, 50%, 98%);
+  font-family: "Red Hat Text", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 73rem;
+  width: 100%;
+  position: relative;
+}
+
+.left-panel {
+  height: 100%;
+  /* width: 67%; */
+  position: absolute;
+  left: 30px;
+}
+.left-panel h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: -1.7rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  transform: translateY(3.5%);
+}
+
+.item {
+  height: 23.5rem;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.images {
+  height: 15.5rem;
+  width: 15.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.transform {
+  position: absolute;
+  transform: translateY(-30%);
+}
+.transform p {
+  margin-bottom: 0.3rem;
+}
+
+.cart {
+  width: 11rem;
+  height: 3rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(23%);
+  left: 2.7rem;
+  gap: 5px;
+  border-radius: 50px;
+  border: 1px solid hsl(12, 20%, 44%);
+  padding: 15px;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+}
+.cart .image {
+  width: 2rem;
+  height: 1.8rem;
+}
+.cart .describe {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.cart-holder {
+  width: 11rem;
+  height: 3rem;
+  background-color: hsl(14, 86%, 42%);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border: none;
+  cursor: pointer;
+}
+.cart:hover {
+  border: 1px solid hsl(14, 86%, 42%);
+  color: hsl(14, 86%, 42%);
+}
+.circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+.circle img {
+  width: 13px;
+  height: 13px;
+}
+/* .circle:hover,
+.circl:active {
+  background-color: white;
+} */
+.border {
+  border: 1px solid hsl(14, 86%, 42%);
+}
+.display {
+  font-size: 17px;
+  color: white;
+  font-weight: 400;
+}
+
+.category {
+  font-size: 15px;
+  color: hsl(14, 25%, 72%);
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+.price {
+  font-weight: 600;
+  font-size: 18px;
+  color: hsl(14, 86%, 42%);
+}
+
+.right-panel {
+  background-color: white;
+  height: fit-content;
+  width: 25rem;
+  position: absolute;
+  top: 2rem;
+  transform: translateY(-15%);
+  right: 1.1rem;
+  padding: 30px;
+}
+.space {
+  margin-bottom: 3.5rem;
+  color: hsl(14, 86%, 42%);
+}
+.align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid hsl(13, 31%, 94%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0.5rem;
+  gap: 30px;
+  position: relative;
+}
+.left {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(14, 25%, 72%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 26%;
+}
+.spaced {
+  color: hsl(14, 86%, 42%);
+  margin-bottom: 3rem;
+}
+.red {
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+}
+.coloured {
+  color: hsl(14, 25%, 72%);
+}
+.last {
+  color: hsl(12, 20%, 44%);
+  font-weight: 600;
+}
+.right p {
+  margin-bottom: 0.3rem;
+}
+.margin {
+  margin: 1rem;
+}
+
+.item-name {
+  color: hsl(14, 65%, 9%);
+  font-weight: 600;
+}
+.content-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.contained,
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+}
+.total {
+  color: hsl(12, 20%, 44%);
+}
+.number {
+  color: hsl(14, 65%, 9%);
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.mid {
+  height: 3.5rem;
+  width: 100%;
+  background-color: hsl(13, 31%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  width: 100%;
+  height: 3.5rem;
+  background-color: hsl(14, 86%, 42%);
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* Styles for Order Confirm */
+.overlay .contain {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: white;
+}
+.overlay .entered {
+  height: fit-content;
+  width: fit-content;
+  padding: 15px;
+  background-color: hsl(20, 50%, 98%);
+}
+.overlay .coloured {
+  color: hsl(12, 20%, 44%);
+}
+.overlay .confirm {
+  color: hsl(14, 65%, 9%);
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+.overlay .thanks {
+  font-size: 18px;
+  color: hsl(14, 25%, 72%);
+  margin-bottom: 1rem;
+}
+.overlay .select {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: inherit;
+  width: 27rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid hsl(7, 20%, 60%);
+  background-color: hsl(20, 50%, 98%);
+  position: relative;
+}
+.overlay .in {
+  height: 3rem;
+  width: 3rem;
+}
+.overlay .in img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.overlay .contents-flex {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 1rem;
+  height: 3rem;
+}
+.overlay .flexed {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 77%;
+}
+.overlay .final {
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+.overlay .order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding: 15px;
+  background-color: hsl(20, 50%, 98%);
+}
+.overlay .attribution {
+  font-size: 18px;
+  color: hsl(14, 65%, 9%);
+}
+.overlay .total-amount {
+  font-size: 30px;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  /* overflow: scroll; */
+}
+.close-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  height: 4rem;
+  background-color: hsl(14, 86%, 42%);
+  margin-top: 1.5rem;
+  border-radius: 40px;
+}
+.hidden {
+  display: none;
+}
